@@ -1,8 +1,3 @@
-def load_calories_file(calories_file):
-    with open(calories_file) as f:
-        calories_string = f.read()
-    return calories_string
-
 def convert_list_to_int(list):
     int_list = [int(item) for item in list if item]
     return int_list
@@ -22,6 +17,6 @@ def output_result_top_x_elves(list, top_x_elves):
     result_index = [list.index(item) for item in sorted_list]
     print("The top " + str(top_x_elves) + " elves are " + str(result_index) + " and are carrying " + str(result_calories) + " calories total.")
 
-list_split_up_by_elf = load_calories_file('calories.txt').split('\n\n')
+list_split_up_by_elf = open('calories.txt').read().split('\n\n')
 
 output_result_top_x_elves(sum_calories_for_each_elf(list_split_up_by_elf), 3)
