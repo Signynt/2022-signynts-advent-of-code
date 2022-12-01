@@ -1,12 +1,8 @@
-def convert_list_to_int(list):
-    int_list = [int(item) for item in list if item]
-    return int_list
-
 def sum_calories_for_each_elf(list):
     list_of_summed_calories = []
     for item in list:
         calories_of_one_elf = item.split('\n')
-        int_list = convert_list_to_int(calories_of_one_elf)
+        int_list = [int(item) for item in calories_of_one_elf if item]
         summed_calories = sum(int_list)
         list_of_summed_calories.append(summed_calories)
     return list_of_summed_calories
